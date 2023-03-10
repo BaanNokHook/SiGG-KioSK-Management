@@ -26,11 +26,11 @@
                                 <app-desserts-icon></app-desserts-icon>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" [ngClass]="{'active': currentActive === 4}" (click)="scrollTo(alcoholicBeveragesRef, 4)">
                                 <app-drinks-icon></app-drinks-icon>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>
@@ -45,57 +45,123 @@
                         <span class="fs-2">Single POT</span>
                     </div>
 
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of starters">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src="assets\images\bghome2.png"  role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
+                        <div class="card">
+                            <img src="assets\images\SingleHotpot.jpg" class="card-img-top" alt="...">
+                        </div>
 
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div class="col" *ngFor="let item of starters">
+                                <div class="card">
+                                    <!-- <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src="assets\images\bghome2.png"  role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false"> -->
+                                    
+                                    <div class="card-body">
+                                        <!-- <p class="card-text"><strong>{{item.name}}</strong></p> -->
+    
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <!-- <small class="text-dark item-price">Baht {{item.price}}</small> -->
+    
+                                            <div class="btn-group" *ngIf="item.isAvailable == true">
+                                                <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
+                                                    <app-cart-icon></app-cart-icon>
+                                                </span>
+    
+                                                <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
+                                                    <div class="btn-group" role="group" aria-label="-">
+                                                        <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
+                                                        <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
+                                                        <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
+                                            <!-- <div *ngIf="item.isAvailable == false">
+                                                <span class="not-available-text">Not Available.</span>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                </div>
                 </div>
             </section>
 
-            <section class="section" id="starters" style="scroll-margin-top: 0rem;">
+   
+
+            <section class="section" id="mains" #mainsRef>
                 <div class="items-div" *ngIf="isLoaded == true">
                     <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
                         <span class="fs-2">Twin POT</span>
                     </div>
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                        <div class="card">
+                            <img src="assets\images\TwinHotpot.jpeg" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div class="col" *ngFor="let item of mains">
+                                <div class="card">
+                                    <!-- <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src="assets\images\bghome2.png"  role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false"> -->
+                                    
+                                    <div class="card-body">
+                                        <!-- <p class="card-text"><strong>{{item.name}}</strong></p> -->
+    
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <!-- <small class="text-dark item-price">Baht {{item.price}}</small> -->
+    
+                                            <div class="btn-group" *ngIf="item.isAvailable == true">
+                                                <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
+                                                    <app-cart-icon></app-cart-icon>
+                                                </span>
+    
+                                                <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
+                                                    <div class="btn-group" role="group" aria-label="-">
+                                                        <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
+                                                        <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
+                                                        <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div *ngIf="item.isAvailable == false">
+                                                <span class="not-available-text">Not Available.</span>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                </div>
+            </section>
+
+          
+
+            <section class="section" id="desserts" #dessertsRef>
+                <div class="items-div" *ngIf="isLoaded == true">
+                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
+                        <span class="fs-2">Squard POT</span>
+                    </div>
+
+                  
+                    <div class="card">
+                        <img src="assets\images\SquardHotpot.jpg" class="card-img-top" alt="...">
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <div class="col" *ngFor="let item of starters">
                             <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
+                                <!-- <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src="assets\images\bghome2.png"  role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false"> -->
+                                
                                 <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
+                                    <!-- <p class="card-text"><strong>{{item.name}}</strong></p> -->
 
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
+                                        <!-- <small class="text-dark item-price">Baht {{item.price}}</small> -->
 
                                         <div class="btn-group" *ngIf="item.isAvailable == true">
                                             <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
@@ -110,9 +176,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div *ngIf="item.isAvailable == false">
+                                        <!-- <div *ngIf="item.isAvailable == false">
                                             <span class="not-available-text">Not Available.</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -121,675 +187,6 @@
                 </div>
             </section>
 
-            <section class="section" id="starters" style="scroll-margin-top: 0rem;">
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Quart POT</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of starters">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="mains" #mainsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Assorted Platter</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of mains">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Beef</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Chicken</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Duck</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Seafood</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Handmade Balls</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Homemade Paste</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Homemade Dummpling</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Beancurd</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Mushroom</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Vegetable</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Other</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Rice&Noodles</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="desserts" #dessertsRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Soft Drink</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of desserts">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="alcoholic-beverages" #alcoholicBeveragesRef>
-                <div class="items-div" *ngIf="isLoaded == true">
-                    <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                        <span class="fs-2">Alcoholic Beverages</span>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col" *ngFor="let item of alcoholicBeverages">
-                            <div class="card">
-                                <img class="img-loading card-img-top" [ngClass]="{'not-available': !item.isAvailable}" src={{item.imageUrl}} role="img" aria-label="item-image" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-                                <div class="card-body">
-                                    <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-dark item-price">Baht {{item.price}}</small>
-
-                                        <div class="btn-group" *ngIf="item.isAvailable == true">
-                                            <span class="btn btn-sm" *ngIf="item.quantity == 0" (click)="onAdd(item)">
-                                                <app-cart-icon></app-cart-icon>
-                                            </span>
-
-                                            <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
-                                                <div class="btn-group" role="group" aria-label="-">
-                                                    <span type="button" class="btn btn-outline-danger btn-sm" (click)="onRemove(item)">-</span>
-                                                    <span class="text-center" style="width: 30px;">{{[(item.quantity)]}}</span>
-                                                    <span type="button" class="btn btn-outline-success btn-sm" (click)="onAdd(item)">+</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div *ngIf="item.isAvailable == false">
-                                            <span class="not-available-text">Not Available.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
         </div>
     </div>

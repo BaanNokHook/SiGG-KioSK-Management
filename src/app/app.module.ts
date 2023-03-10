@@ -39,6 +39,21 @@ import { AuthGuard } from './route-guards/auth-guard.service';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
 import { DisplayOrdersComponent } from './admin/display-orders/display-orders.component';
+import { AssortedComponent } from './assorted/assorted.component';
+import { BeefComponent } from './beef/beef.component';
+import { ChickenComponent } from './chicken/chicken.component';
+import { DuckComponent } from './duck/duck.component';
+import { HBallsComponent } from './hballs/hballs.component';
+import { HomemadePasteComponent } from './homemade-paste/homemade-paste.component';
+import { HomDummplingComponent } from './hom-dummpling/hom-dummpling.component';
+import { BeancurdComponent } from './beancurd/beancurd.component';
+import { MushroomComponent } from './mushroom/mushroom.component';
+import { VegetableComponent } from './vegetable/vegetable.component';
+import { OtherComponent } from './other/other.component';
+import { RiceNComponent } from './rice-n/rice-n.component';
+import { SoftDComponent } from './soft-d/soft-d.component';
+import { AlcoholComponent } from './alcohol/alcohol.component';
+import { SeafoodComponent } from './seafood/seafood.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +81,22 @@ import { DisplayOrdersComponent } from './admin/display-orders/display-orders.co
     OrderPageComponent,
     ConfirmOrderComponent,
     ManageOrdersComponent,
-    DisplayOrdersComponent
+    DisplayOrdersComponent,
+    AssortedComponent,
+    BeefComponent,
+    ChickenComponent,
+    DuckComponent,
+    HBallsComponent,
+    HomemadePasteComponent,
+    HomDummplingComponent,
+    BeancurdComponent,
+    MushroomComponent,
+    VegetableComponent,
+    OtherComponent,
+    RiceNComponent,
+    SoftDComponent,
+    AlcoholComponent,
+    SeafoodComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

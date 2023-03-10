@@ -1,3 +1,4 @@
+import { AssortedComponent } from './assorted/assorted.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -20,6 +21,20 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
 import { DisplayOrdersComponent } from './admin/display-orders/display-orders.component';
 import { CategoriesComponent } from './home/categories/categories.component';
+import { BeefComponent } from './beef/beef.component';
+import { ChickenComponent } from './chicken/chicken.component';
+import { DuckComponent } from './duck/duck.component';
+import { HBallsComponent } from './hballs/hballs.component';
+import { HomemadePasteComponent } from './homemade-paste/homemade-paste.component';
+import { HomDummplingComponent } from './hom-dummpling/hom-dummpling.component';
+import { BeancurdComponent } from './beancurd/beancurd.component';
+import { MushroomComponent } from './mushroom/mushroom.component';
+import { VegetableComponent } from './vegetable/vegetable.component';
+import { OtherComponent } from './other/other.component';
+import { RiceNComponent } from './rice-n/rice-n.component';
+import { SoftDComponent } from './soft-d/soft-d.component';
+import { AlcoholComponent } from './alcohol/alcohol.component';
+import { SeafoodComponent } from './seafood/seafood.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -85,18 +100,78 @@ const routes: Routes = [
     component: CategoryPageComponent
   },
   {
-    path: 'cart',
-    component: CartPageComponent
+    path: 'Assorted',
+    component: AssortedComponent
   },
   {
-    path: 'orders',
-    component: OrderPageComponent,
-    canActivate: [AuthGuard]
+    path: 'Beef',
+    component: BeefComponent
   },
   {
-    path: 'confirm-order',
-    component: ConfirmOrderComponent,
-    canActivate: [AuthGuard]
+    path: 'Chicken',
+    component: ChickenComponent
+  },
+  {
+    path: 'Duck',
+    component: DuckComponent
+  },
+  {
+    path: 'Seafood',
+    component: SeafoodComponent
+  },
+  {
+      path: 'HBalls',
+      component: HBallsComponent
+  },
+  {
+      path: 'HomemadePaste',
+      component: HomemadePasteComponent
+  },
+  {
+      path: 'HomDummpling',
+      component: HomDummplingComponent
+  },
+  {
+      path: 'Beancurd',
+      component: BeancurdComponent
+  },
+  {
+      path: 'Mushroom',
+      component: MushroomComponent
+  },
+  {
+      path: 'Vegetable',
+      component: VegetableComponent
+  },
+  {
+      path: 'Other',
+      component: OtherComponent
+  },
+  {
+      path: 'RiceN',
+      component: RiceNComponent
+  },
+  {
+      path: 'SoftD',
+      component: SoftDComponent
+  },
+  {
+      path: 'Alcohol',
+      component: AlcoholComponent
+  },
+  {
+      path: 'cart',
+      component: CartPageComponent
+  },
+  {
+        path: 'orders',
+      component: OrderPageComponent,
+      canActivate: [AuthGuard]
+  },
+  {
+      path: 'confirm-order',
+      component: ConfirmOrderComponent,
+      canActivate: [AuthGuard]
   },
   {
     path: 'not-found',
